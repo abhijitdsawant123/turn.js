@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../../turn.min.js"></script>
+
+<style type="text/css">
+body{
+	background:#ccc;
+}
+#magazine{
+	width:1152px;
+	height:752px;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+</style>
+</head>
+<body>
+
+<div id="magazine">
+	<div style="background-image:url(pages/01.jpg);"></div>
+	<div style="background-image:url(pages/02.jpg);"></div>
+	<div style="background-image:url(pages/03.jpg);"></div>
+	<div style="background-image:url(pages/04.jpg);"></div>
+	<div style="background-image:url(pages/05.jpg);"></div>
+	<div style="background-image:url(pages/06.jpg);"></div>
+	<div style="background-image:url(pages/07.jpg);"></div>
+	<div style="background-image:url(pages/08.jpg);"></div>
+	<div style="background-image:url(pages/09.jpg);"></div>
+	<div style="background-image:url(pages/10.jpg);"></div>
+	<div style="background-image:url(pages/11.jpg);"></div>
+	<div style="background-image:url(pages/12.jpg);"></div>
+	<div style="background-image:url(pages/13.jpg);"></div>
+	<div style="background-image:url(pages/14.jpg);"></div>
+	<div style="background-image:url(pages/15.jpg);"></div>
+	<div style="background-image:url(pages/16.jpg);"></div>
+	<div style="background-image:url(pages/17.jpg);"></div>
+	<div style="background-image:url(pages/18.jpg);"></div>
+	<div style="background-image:url(pages/19.jpg);"></div>
+	<div style="background-image:url(pages/20.jpg);"></div>
+	<div style="background-image:url(pages/21.jpg);"></div>
+	<div style="background-image:url(pages/22.jpg);"></div>
+	<div style="background-image:url(pages/23.jpg);"></div>
+	<div style="background-image:url(pages/24.jpg);"></div>
+	<div style="background-image:url(pages/25.jpg);"></div>
+	<div style="background-image:url(pages/26.jpg);"></div>
+	<div style="background-image:url(pages/27.jpg);"></div>
+	<div style="background-image:url(pages/28.jpg);"></div>
+	<div style="background-image:url(pages/29.jpg);"></div>
+	<div style="background-image:url(pages/30.jpg);"></div>
+	<div style="background-image:url(pages/31.jpg);"></div>
+	<div style="background-image:url(pages/32.jpg);"></div>
+	<div style="background-image:url(pages/33.jpg);"></div>
+	<div style="background-image:url(pages/34.jpg);"></div>
+	<div style="background-image:url(pages/35.jpg);"></div>
+	<div style="background-image:url(pages/36.jpg);"></div>
+	<div style="background-image:url(pages/37.jpg);"></div>
+	<div style="background-image:url(pages/38.jpg);"></div>
+	<div style="background-image:url(pages/39.jpg);"></div>
+	<div style="background-image:url(pages/40.jpg);"></div>	
+	<div style="background-image:url(pages/41.jpg);"></div>
+	<div style="background-image:url(pages/42.jpg);"></div>
+	<div style="background-image:url(pages/43.jpg);"></div>
+	<div style="background-image:url(pages/44.jpg);"></div>
+	<div style="background-image:url(pages/45.jpg);"></div>
+	<div style="background-image:url(pages/46.jpg);"></div>
+	<div style="background-image:url(pages/47.jpg);"></div>
+	<div style="background-image:url(pages/48.jpg);"></div>
+	<div style="background-image:url(pages/49.jpg);"></div>
+	<div style="background-image:url(pages/50.jpg);"></div>
+	<div style="background-image:url(pages/51.jpg);"></div>
+	<div style="background-image:url(pages/52.jpg);"></div>
+	<div style="background-image:url(pages/53.jpg);"></div>
+	<div style="background-image:url(pages/54.jpg);"></div>
+	<div style="background-image:url(pages/55.jpg);"></div>
+	<div style="background-image:url(pages/56.jpg);"></div>
+	<div style="background-image:url(pages/57.jpg);"></div>
+	<div style="background-image:url(pages/58.jpg);"></div>
+	<div style="background-image:url(pages/59.jpg);"></div>
+	<div style="background-image:url(pages/60.jpg);"></div>
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
+	});
+
+</script>
+
+</body>
+</html>
